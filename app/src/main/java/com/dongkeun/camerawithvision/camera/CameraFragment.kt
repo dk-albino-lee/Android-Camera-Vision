@@ -54,7 +54,10 @@ class CameraFragment : Fragment() {
         viewModel.labels.observe(viewLifecycleOwner) {
             if (it == null) return@observe
 
-            // TODO : Set ListAdapter
+            if (binding.labelRecycler.adapter == null)
+                binding.labelRecycler.adapter = LabelAdapter()
+            (binding.labelRecycler.adapter as LabelAdapter).list = it
+            binding.labelRecycler.adapter?.notifyDataSetChanged()
         }
 
         return binding.root

@@ -7,12 +7,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dongkeun.camerawithvision.model.DetectedFeature
+import com.dongkeun.camerawithvision.model.Label
 import com.dongkeun.camerawithvision.model.SendingArgument
 import com.google.gson.Gson
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import timber.log.Timber
 import java.io.ByteArrayOutputStream
 
@@ -22,15 +20,35 @@ class CameraViewModel : ViewModel() {
     var photo: Bitmap? = null
     var bytesOfPhoto: ByteArray? = null
     var key: String? = null
-    private val _labels = MutableLiveData<Array<String>>()
-    val labels: LiveData<Array<String>> get() = _labels
+    private val _labels = MutableLiveData<MutableList<Label>>()
+    val labels: LiveData<MutableList<Label>> get() = _labels
+    val labelPageVisible = MutableLiveData<Boolean>()
+    val labelProgressBarVisible = MutableLiveData<Boolean>()
+    private var meaninglessCnt = 0 // Click on Label page
 
     private val gson = Gson()
     private var job: Job? = null
 
     init {
         _errorOccurred.value = false
-        _labels.value = arrayOf()
+        _labels.value = mutableListOf()
+        labelPageVisible.value = false
+        meaninglessCnt = 0
+        labelPageVisible.value = false
+    }
+
+    private fun setLabelPageVisible() {
+        labelPageVisible.value = true
+        labelProgressBarVisible.value = true
+    }
+
+    fun closeLabelPage() {
+        _labels.value = mutableListOf()
+        labelPageVisible.value = false
+    }
+
+    fun clickOnLabelPage() {
+        meaninglessCnt++
     }
 
     fun getBitmap(image: ImageProxy) {
@@ -63,8 +81,10 @@ class CameraViewModel : ViewModel() {
                     return@launch
                 }
 
-                _labels.value = labelSet.labels!!
-
+                val labelList = mutableListOf<Label>()
+                labelSet.labels.forEach { labelList.add(Label(it)) }
+                _labels.postValue(labelList)
+                withContext(Dispatchers.Main) { labelProgressBarVisible.value = false }
             }
     }
 
