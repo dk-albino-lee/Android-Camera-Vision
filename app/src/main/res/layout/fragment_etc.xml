@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dongkeun.camerawithvision.etc.EtcViewModel" />
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".etc.EtcFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_user_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".08" />
+
+            <LinearLayout
+                android:id="@+id/user_lyt"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guideline_user_top"
+                android:background="@drawable/round_50dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:background="#00000000"
+                    app:srcCompat="@drawable/ic_user"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_post_lyt"
+                app:layout_constraintTop_toBottomOf="@id/user_lyt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHeight_percent=".08"
+                style="@style/etc_tab_lyt">
+
+                <ImageView
+                    app:srcCompat="@drawable/ic_picture"
+                    android:contentDescription="icon of viewing my post"
+                    style="@style/etc_tab_icon" />
+
+                <TextView
+                    android:text="@string/etc_my_post"
+                    style="@style/etc_tab_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_my_liked_lyt"
+                app:layout_constraintTop_toBottomOf="@id/view_post_lyt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHeight_percent=".08"
+                style="@style/etc_tab_lyt">
+
+                <ImageView
+                    app:srcCompat="@drawable/ic_favorite"
+                    android:contentDescription="icon of viewing my liked posts"
+                    style="@style/etc_tab_icon"
+                    />
+
+                <TextView
+                    android:text="@string/etc_my_favourites"
+                    style="@style/etc_tab_text"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                app:layout_constraintTop_toBottomOf="@id/view_my_liked_lyt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHeight_percent=".08"
+                style="@style/etc_tab_lyt">
+
+                <ImageView
+                    app:srcCompat="@drawable/ic_comment"
+                    android:contentDescription="icon of viewing posts I commented"
+                    style="@style/etc_tab_icon"
+                    />
+
+                <TextView
+                    android:text="@string/etc_post_I_wrote_comment"
+                    style="@style/etc_tab_text"
+                    />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/less_light_olive"
+            android:onClick="@{()->viewModel.setBlockClickEvent()}"
+            android:visibility="gone">
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

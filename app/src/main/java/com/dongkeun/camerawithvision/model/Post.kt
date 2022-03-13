@@ -14,5 +14,12 @@ data class Post(
     val photoBytes: String,
     @field:SerializedName("Content")
     val content: String,
+    @field:SerializedName("LikedCount")
+    val likedCount: Int,
+    @field:SerializedName("Comment")
+    val comment: Comment,
+    @field:SerializedName("IsDeleted")
+    val isDeleted: Int,
+
     var bitmap: Bitmap
 )

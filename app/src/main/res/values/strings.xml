@@ -5,4 +5,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_user">My Things</string>
+    <string name="etc_my_post">View my posts</string>
+    <string name="etc_my_favourites">View posts I liked</string>
+    <string name="etc_post_I_wrote_comment">View posts I commented</string>
 </resources>

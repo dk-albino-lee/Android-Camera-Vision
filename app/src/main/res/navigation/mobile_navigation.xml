@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.dongkeun.camerawithvision.user.UserFragment"
+        android:name="com.dongkeun.camerawithvision.etc.EtcFragment"
         android:label="@string/title_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_etc" />
 </navigation>
