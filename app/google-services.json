@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "51622181852",
+    "firebase_url": "https://story-of-your-things-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "story-of-your-things",
+    "storage_bucket": "story-of-your-things.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51622181852:android:932cc48fb39925df636d19",
+        "android_client_info": {
+          "package_name": "com.dongkeun.camerawithvision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51622181852-53p6ppcmf23uc4kh76nft9aeq0ddr4c3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA31QzLuE10CJj3TdRnCLvbBzbPURs7RmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51622181852-53p6ppcmf23uc4kh76nft9aeq0ddr4c3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

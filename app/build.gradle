@@ -60,6 +60,8 @@ dependencies {
     def ktor_version = "1.6.7"
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("io.ktor:ktor-client-serialization:$ktor_version")
+    implementation("io.ktor:ktor-client-gson:$ktor_version")
     implementation 'com.google.code.gson:gson:2.8.8'
 
     implementation "com.jakewharton.timber:timber:4.7.1"

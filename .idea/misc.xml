@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/adapter_label.xml" value="0.25227963525835867" />
         <entry key="app/src/main/res/layout/fragment_camera.xml" value="0.22056159420289856" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.3342391304347826" />
+        <entry key="app/src/main/res/layout/fragment_etc.xml" value="0.25227963525835867" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.31567028985507245" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.25227963525835867" />
